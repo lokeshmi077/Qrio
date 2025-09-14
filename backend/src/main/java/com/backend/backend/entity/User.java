@@ -1,7 +1,7 @@
 package com.backend.backend.entity;
 
 import jakarta.persistence.*;
-
+import jakarta.validation.constraints.*;
 @Entity
 @Table(name="users")
 public class User {
@@ -10,12 +10,20 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message="Username is required")
     @Column(unique = true)
     private String username;
 
+    @Email(message="Email should be unique")
+    @NotBlank(message="Email is required")
     @Column(unique = true)
     private String email;
+
+    @NotBlank(message="Password is required")
+    @Size(min=6, message="Password must be at least 6 characted")
     private String password;
+
+    @NotNull(message="Mobile no is required")
     private Long mobile;
 
     public Long getId(){
