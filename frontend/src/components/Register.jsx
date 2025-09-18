@@ -28,12 +28,11 @@ function Register() {
       <div className="w-full max-w-sm p-8 bg-white shadow-lg rounded-2xl">
         {/* Instagram Logo */}
         <h1 className="text-4xl font-bold text-center text-pink-500 mb-6">
-          BoatApp
+          QRIO
         </h1>
 
-        {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-4">
-          {/* Email */}
+        
           <input
             type="email"
             name="email"

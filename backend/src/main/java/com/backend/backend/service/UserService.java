@@ -1,5 +1,8 @@
 package com.backend.backend.service;
 
-public inter UserService {
+import com.backend.backend.entity.User;
+
+public interface UserService {
     
+    User createUser(User user);
 }

@@ -14,10 +14,13 @@ public class User {
     @Column(unique = true)
     private String username;
 
-    @Email(message="Email should be unique")
+    @Email(message="Email should be valid")
     @NotBlank(message="Email is required")
     @Column(unique = true)
     private String email;
+
+    @Column(nullable=true)
+    private String password1;
 
     @NotBlank(message="Password is required")
     @Size(min=6, message="Password must be at least 6 characted")
@@ -44,6 +47,15 @@ public class User {
     public void setUsername(String username){
 
         this.username=username;
+    }
+
+    public String getPassword1(String password1){
+
+        return password1;
+    }
+    public void setPassword1(String password1){
+
+        this.password1=password1;
     }
     
     public String getEmail(){
